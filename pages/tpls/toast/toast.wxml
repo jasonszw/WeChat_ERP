@@ -1,0 +1,7 @@
+<!--toast.wxml-->
+<template name="toast">
+  
+ <view class="info" wx:if="{{showStatus}}">
+ {{tips}}
+ </view>
+</template>

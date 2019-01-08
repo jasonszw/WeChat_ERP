@@ -1,0 +1,58 @@
+/* dialog.wxss */
+.dialog {
+  position: fixed;
+  top: 50%;
+  margin: auto 10%;
+  margin-top: -25%;
+  width: 80%;
+  border-radius: 16rpx;
+  background-color: #fff;
+  align-items: center;
+  z-index: 9999;
+  color: #000;
+}
+
+.dialog .content {
+  display: flex;
+  margin: 48px 23px;
+  margin-bottom: -24px;
+  justify-content: center;
+  height: 100px;
+  text-align: left;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+  color: #454545;
+}
+
+.dialog .dialog-btn-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+}
+
+.dialog-btn-area .btn-left {
+  height: 46px;
+  line-height: 46px;
+  flex: 1;
+  border-right: 1rpx solid #e5e5e5;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 -5px 5px 0 rgba(98, 154, 255, 0.18);
+  color: #373c3f;
+}
+
+.dialog-btn-area .btn-right {
+  flex: 1;
+  display: inline-block;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  color: #2c2c2c;
+  background-color: #629aff;
+  box-shadow: 0 -5px 5px 0 rgba(98, 154, 255, 0.18);
+}
+
+.btn-left:active, .btn-right:active {
+  opacity: 0.6;
+}

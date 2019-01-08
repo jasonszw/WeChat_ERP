@@ -1,0 +1,16 @@
+<!--pages/new-add-order/new-add-order.wxml-->
+<import src="../tpls/product-cell/product-cell.wxml"></import>
+<view class="addProduct bg-629aff">
+  <view class="commodityName">
+    <input placeholder-class="size" placeholder="商品名称/助记码/商品代码" />
+    <navigator url="../product-detail/product-detail" class="query">查询</navigator>
+  </view>
+</view>
+<view class="container">
+  <view style="margin-bottom:50px;" class="commodityBox">
+    <view wx:for="{{productList}}" wx:index="index">
+      <template is="product-cell" data="{{item,index}}" />
+    </view>
+  </view>
+</view>
+<view class="bottomAdd bg-629aff" bindtap="addProductToOrder">添加</view>

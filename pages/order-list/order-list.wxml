@@ -1,0 +1,54 @@
+<!--order-list.wxml-->
+<!-- <view class="bg-half bg-629aff"></view> -->
+<!--页面主体,订单列表页  -->
+<import src="../tpls/order-cell/order-cell.wxml"></import>
+<!--查询区  -->
+
+<view class="nav" style="height:{{navHeight}}px">
+  <view class="nav-search">
+    <view class="search-item" bindtap="showDropList">
+      <view class="select-item-text">{{selectStatusItem ? selectStatusItem:'状态' }}</view>
+      <block wx:if="{{status}}">
+        <view class="icon-down" style="margin-top:15px;"></view>
+      </block>
+      <block wx:else>
+        <view class="icon-up" style="margin-top:0px;"></view>
+      </block>
+    </view>
+    <view class="search-item" bindtap="toSearch">
+      <view class="search-bar">
+        <image src="../../images/icon/search-2.png" class="search-icon"></image>
+        <view class="search-hold">{{hasSearch?userInput:'订单号/机构名称'}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="select-options" hidden="{{showedList}}">
+    <block wx:for="{{statusList}}" wx:index="index">
+      <view class="options-item" hover-class="color-fdd600" bindtap="selectItem" data-name="{{item}}" data-index="{{index}}"> {{item}}</view>
+    </block>
+  </view>
+</view>
+
+<view class="container" style="margin-top:-53px;">
+  <scroll-view scroll-y="true" id="list">
+    <block wx:if="{{orderList.length >0}}">
+      <view>
+        <!--未发货与已发货部分  -->
+        <view wx:for="{{orderList}}" wx:key="KeyId">
+          <template is="order-cell" data="{{item}}"></template>
+        </view>
+        <view style="border-top:solid 1px #dddddd; height: 2px;"></view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="msg">
+        无列表数据
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<view class="foot">
+  <view class="circle-btn" bindtap="toAddOrder">
+    <image src="../../images/icon/add-sym.png" class="add-icon"></image>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+/*下拉列表单选样式  */
+
+.radio-group {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  z-index: 2000;
+  opacity: 1;
+}
+
+.radio {
+  display: flex;
+  flex-flow: center nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 49px;
+  line-height: 49px;
+  font-size: 16px;
+  color: #373c3f;
+  border-top: solid 1px #eee;
+}
+
+.radio:first-of-type {
+  border: none;
+}

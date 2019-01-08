@@ -1,0 +1,65 @@
+/* pages/new-add-order/new-add-order.wxss */
+@import '../tpls/product-cell/product-cell.wxss';
+
+.addProduct {
+  height: 150px;
+}
+
+.commodityName {
+  width: 84%;
+  height: 25px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+.commodityName input {
+  height: 100%;
+  font-size: 12px;
+  background: #88b3ff;
+  position: absolute;
+  top: 0;
+  width: 94%;
+  border-radius: 17px;
+  padding-left: 15px;
+}
+
+.size {
+  color: #fff;
+  opacity: 0.76;
+}
+
+.query {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  line-height: 36px;
+  background: #fff;
+  height: 100%;
+  width: 80px;
+  color: #454545;
+  text-align: center;
+  border-radius: 0 17px 17px 0;
+  font-size: 14px;
+}
+
+.bottomAdd {
+  font-size: 14px;
+  height: 50px;
+  text-align: center; 
+  line-height: 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+.msg {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 30%;
+  color: #629aff;
+  font-size: 24px;
+}

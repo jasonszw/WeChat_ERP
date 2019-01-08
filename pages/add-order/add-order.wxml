@@ -1,0 +1,157 @@
+<!--add-order.wxml-->
+<import src="../tpls/order-product/order-product.wxml"></import>
+<import src="../tpls/bottom-dialog/bottom-dialog.wxml"></import>
+<import src="../tpls/dialog/dialog.wxml"></import>
+
+<view class="bg-150"></view>
+<form bindsubmit="addOrder">
+  <scroll-view scroll-y='true' style="margin-top:-150px;height:90vh">
+    <view class="container">
+      <!--基本信息部分  -->
+      <view class="card line-spacing-20px">
+        <view class="list-header">请输入订单详细信息(<label class="color-ff6262">*</label>为必填项)</view>
+        <view class="list">
+          <!-- 机构名称 -->
+          <view class="list-item">
+            <view class="list-item-hd">
+              <view class="item-star color-ff6262">*</view>
+              <view class="item-title">机构名称</view>
+              <view class="item-desc">
+                <input type="text" name="name" placeholder="请输入机构名称" placeholder-class="placeholder" disabled value="{{order.name}}" capture-bind:tap="toSearch" value="{{order.name}}" /></view>
+            </view>
+            <view class="list-item-ft arrow"></view>
+          </view>
+          <!--机构代码  -->
+          <view class="list-item" wx:if="{{codeShowed}}">
+            <view class="list-item-hd">
+              <view class="item-star color-ff6262 ">*</view>
+              <view class="item-title ">机构代码</view>
+              <view class="item-desc"><input type="text" name="code" placeholder="请输入机构名称 " disabled class="placeholder" value="{{order.code}}" /></view>
+            </view>
+          </view>
+          <!--业务员  -->
+          <view class="list-item ">
+            <view class="list-item-hd ">
+              <view class="item-star color-ff6262">*</view>
+              <view class="item-title">业务员</view>
+              <view class="item-desc" capture-bind:tap="showRadioGroup" data-type="SALE"><input type="text" value="{{order.saleman}}" placeholder="请选择业务员" placeholder-class="placeholder" disabled /></view>
+            </view>
+            <view class="list-item-ft arrow "></view>
+          </view>
+          <!--作业区  -->
+          <view class="list-item">
+            <view class="list-item-hd">
+              <view class="item-star color-ff6262">*</view>
+              <view class="item-title">作业区 </view>
+              <view class="item-desc" capture-bind:tap="showRadioGroup" data-type="WORK_AREA"><input type="text" value="{{order.distributionPoint}}" placeholder="请选择作业区" placeholder-class="placeholder" disabled /></view>
+            </view>
+            <view class="list-item-ft arrow"></view>
+          </view>
+          <!--计划类型 -->
+          <view class="list-item ">
+            <view class="list-item-hd ">
+              <view class="item-star color-ff6262">*</view>
+              <view class="item-title ">计划类型 </view>
+              <view class="item-desc "><input type="text" name="bill" value="{{order.bill}}" placeholder="请选择计划类型 " placeholder-class="placeholder" disabled capture-bind:tap="showRadioGroup" data-type="PLAN_TYPE" /></view>
+            </view>
+          </view>
+          <!--配送方式  -->
+          <view class="list-item" style="{{!orgShowed ? 'border:none;':''}}">
+            <view class="list-item-hd">
+              <view class="item-star color-ff6262">*</view>
+              <view class="item-title">配送方式</view>
+              <view class="item-desc" capture-bind:tap="showRadioGroup" data-type="SEND_METHOD"><input type="text" value="{{order.deliveryMethod}}" placeholder="请选择配送方式" placeholder-class="placeholder" disabled /></view>
+            </view>
+            <view class="list-item-ft arrow "></view>
+          </view>
+          <!--所属部门  -->
+          <view class="list-item" wx:if="{{orgShowed}}" style="{{!orgShowed ? 'border:none;':''}}">
+            <view class="list-item-hd ">
+              <view class="item-star color-ff6262 "></view>
+              <view class="item-title"> 所属部门 </view>
+              <view class="item-desc" data-type="ORG" capture-bind:tap="showRadioGroup"><input type="text" value="{{order.orgName}}" disabled="{{orgDisabled}}" name="orgName" placeholder="请选择/输入部门信息" placeholder-class="placeholder " /></view>
+            </view>
+            <view class="list-item-ft arrow "></view>
+          </view>
+          <!--收货地址,选择填入  -->
+          <view class="list-item" wx:if="{{addressShowed}}" style="{{addressShowed ? 'border:none;':''}}">
+            <view class="list-item-hd">
+              <view class="item-star color-ff6262"></view>
+              <view class="item-title">收货地址</view>
+              <view class="item-desc">
+                <block wx:if="{{!detailAddressShowed}}">
+                  <view class="form-input" style="margin-left:-8px;">
+                    <view>{{order.address}}</view>
+                  </view>
+                </block>
+                <block wx:else>
+                  <picker mode="region" bindchange="bindRegionChange">
+                    <view class="form-input" style="margin-left:-8px;">
+                      <view wx:if="{{order.address ==undefined ||order.address == ''}}"><text class="placeholder">请选择省,市,区</text></view>
+                      <view wx:else>{{order.address}}</view>
+                    </view>
+                  </picker>
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class="list-item" style="border:none;" wx:if="{{detailAddressShowed}}">
+            <view class="list-item-hd ">
+              <view class="item-star "></view>
+              <view class="item-title " style="flex:2;"><input type="text" name="addressDetail" value="{{order.addressDetail}}"  placeholder="请输入详细地址 " placeholder-class="placeholder " /></view>
+            </view>
+          </view>
+          <view class="border-top-5px ">
+          </view>
+          <block wx:for="{{productList}}" wx:key="*this" wx:index="index">
+            <template is="order-product" data="{{item,index}}"></template>
+          </block>
+          <view style="height:34px;">
+          </view>
+        </view>
+      </view>
+      <view class="add-btn-area" wx:if="{{addBtnShowed}}">
+        <navigator class="add-btn add-btn-disabled" hover-class="none" url="../add-product/add-product?code={{order.code}}&pageIndex=1">
+          <image src="../../images/icon/add.png " class="add-icon"></image>
+          <view style="margin-left:10px;">添加产品</view>
+        </navigator>
+      </view>
+      <!--订单信息部分填写  -->
+      <view class="card ">
+        <view class="list ">
+          <!--联系人  -->
+          <view class="list-item">
+            <view class="list-item-hd ">
+              <view class="item-star color-ff6262 "></view>
+              <view class="item-title">联系人</view>
+              <view class="item-desc "><input type="text" name="linkMan" placeholder="请输入联系人 " placeholder-class="placeholder" value="{{order.linkMan}}" /></view>
+            </view>
+          </view>
+          <!--联系电话  -->
+          <view class="list-item">
+            <view class="list-item-hd ">
+              <view class="item-star color-ff6262 "></view>
+              <view class="item-title">联系电话</view>
+              <view class="item-desc"><input type="text" name="phone" placeholder="请输入联系方式 " placeholder-class="placeholder " value="{{order.phone}}" /></view>
+            </view>
+          </view>
+          <view class="list-item ">
+            <view class="list-item-hd ">
+              <view class="item-star color-ff6262 "></view>
+              <view class="item-title">备注 </view>
+              <view class="item-desc"><input type="text" value="{{order.memo}}" name="memo" placeholder="选填 " placeholder-class="placeholder " /></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <button class="foot " formType="submit">
+   完成
+  </button>
+</form>
+
+<template is="bottom-dialog" data="{{showedRadioGroup,optionsList,selectType}}"></template>
+
+<!--弹框部分  -->
+<template is="dialog" data="{{...dialogOptions}}"></template>

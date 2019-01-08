@@ -1,0 +1,65 @@
+/* login.wxss */
+
+.login {
+  height: 100vh;
+}
+
+.loginBg {
+  height: 50vh;
+  position: relative;
+}
+
+.loginBg image {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-container {
+  background-color: #fff;
+  width: 94.7%;
+  height: 60vh;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  margin-left: 2.65%;
+  position: absolute;
+  z-index: 2;
+  bottom: 10px; 
+}
+
+.login-container button {
+  width: 60.3%;
+  height: 11.3%;
+  margin-top: 20%;
+}
+
+.login-container image {
+  width: 22px;
+  height: 22px;
+}
+
+.login-container input {
+  width: 60%;
+  padding-left: 26%;
+}
+
+.user-pwd {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px #eee;
+  font-size: 15px;
+  margin-left: 5%;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.user-pwd input{
+  flex: 1;
+}
+
+.input-placeholder {
+  color: #808080;
+}

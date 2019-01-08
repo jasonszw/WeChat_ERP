@@ -1,0 +1,47 @@
+.order-list {
+  padding: 17px 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.list-hd {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  border-right: solid 1px #eee;
+  text-align: left;
+  padding-top: 11px;
+  padding-right: 16px;
+}
+
+.list-bd {
+  flex: 2;
+  margin-left: 23px;
+}
+
+.ft-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -12.5px;
+}
+
+.list-ft {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -12.5px;
+}
+
+.btn-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}

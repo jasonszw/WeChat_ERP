@@ -1,0 +1,64 @@
+<!--examine.wxml-->
+<import src="../tpls/examine-cell/examine-cell.wxml"></import>
+<import src="../tpls/dialog/dialog.wxml"></import>
+
+<view class="nav-search" style="height:{{navHeight}}px">
+  <!--搜索栏  -->
+  <view class="search-bar" bindtap="toSearch">
+    <image src="../../images/icon/search-2.png" class="search-icon"></image>
+    <view class="search-hold">{{hasSearch?userInput:'订单号/机构名称'}}</view>
+  </view>
+  <!--下拉列表选择区域  -->
+  <view class="drop-down-bar">
+    <view class="select-item" bindtap="showDropList" data-query-list="status">
+      <view class="select-item-text">{{selectStatusItem ? selectStatusItem:'状态' }}</view>
+      <block wx:if="{{status}}">
+        <view class="icon-down" style="margin-top:8px;"></view>
+      </block>
+      <block wx:else>
+        <view class="icon-up"></view>
+      </block>
+
+    </view>
+    <view class="select-item" bindtap="showDropList" data-query-list="amount">
+      <view class="select-item-text">{{selectAmountItem ? selectAmountItem:'金额' }}</view>
+      <block wx:if="{{amountStatus}}">
+        <view class="icon-down" style="margin-top:8px;"></view>
+      </block>
+      <block wx:else>
+        <view class="icon-up"></view>
+      </block>
+    </view>
+    <view class="select-item" bindtap="showDropList" data-query-list="time">
+      <view class="select-item-text">{{selectTimeItem ? selectTimeItem:'时间' }}</view>
+      <block wx:if="{{timeStatus}}">
+        <view class="icon-down" style="margin-top:8px;"></view>
+      </block>
+      <block wx:else>
+        <view class="icon-up"></view>
+      </block>
+    </view>
+  </view>
+  <view class="select-options" id="select-options" hidden="{{showedList}}" style="left:{{left}}">
+    <block wx:for="{{optionsList}}" wx:index="index" wx:key="*this">
+      <view class="options-item " hover-class="color-fdd600" bindtap="selectItem" data-name="{{item}}" data-index="{{index}}" data-select-type="{{selectType}}"> {{item}}</view>
+    </block>
+  </view>
+  <!--下拉列表显示区  -->
+</view>
+<view class="container" style="margin-top:-53px;">
+  <!--审核订单部分  -->
+  <block wx:if="{{examineList.length>0}}">
+    <block wx:for="{{examineList}}" wx:index="index" wx:key="*this">
+      <!--审核订单项,索引  -->
+      <template is="examine-cell" data="{{...item,index}}"></template>
+    </block>
+  </block>
+  <block wx:else>
+    <view class="msg">
+      无列表数据
+    </view>
+  </block>
+</view>
+<!--弹框部分  -->
+<template is="dialog" data="{{...dialogOptions}}"></template>

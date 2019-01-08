@@ -1,0 +1,141 @@
+/* add-order.wxss */
+@import '../tpls/order-product/order-product.wxss';
+@import '../tpls/bottom-dialog/bottom-dialog.wxss';
+@import '../tpls/dialog/dialog.wxss';
+.bg-150 {
+  height: 150px;
+  background-color: #629aff;
+}
+
+.list-header {
+  display: block;
+  padding: 15px 0;
+  font-size: 32rpx;
+  letter-spacing: 2.2rpx;
+  text-align: center;
+  color: #373c3f;
+  border-bottom: 5px solid #f2f2f2;
+}
+
+.border-top-5px {
+  display: block;
+  height: 5px;
+  background: #f2f2f2;
+  margin: 0 -15px;
+}
+
+.list {
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.list .list-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.list .list-item:last-of-type {
+  border: none;
+}
+
+.list-item-hd {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.item-star {
+  flex: 0.15;
+  display: inline-block;
+}
+
+.item-title {
+  letter-spacing: 1px;
+  text-align: left;
+  color: #87898d;
+  flex: 1;
+  display: inline-block;
+}
+
+.item-desc {
+  letter-spacing: -0.3px;
+  flex: 2;
+}
+
+input {
+  text-overflow: ellipsis;
+}
+
+.bg-5px {
+  height: 5px;
+  background: #f2f2f2;
+  padding: 0 -15px;
+  margin-bottom: 31px;
+}
+
+.placeholder {
+  color: #b1b1b1;
+}
+
+.input {
+  display: block;
+  height: 1.4rem;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: UICTFontTextStyleBody;
+  min-height: 1.4rem;
+}
+
+.foot {
+  border-radius: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10vh;
+  line-height: 10vh;
+  display: flex;
+  justify-content: center;
+  background-color: #629aff;
+  color: #fff;
+}
+
+.foot:active {
+  opacity: 0.6;
+}
+
+.add-btn-area {
+  margin-top: -33px;
+  margin-bottom: 15px;
+  height: 33px;
+  line-height: 33px;
+  display: flex;
+  justify-content: center;
+}
+
+.add-btn {
+  width: 150px;
+  border-radius: 14.5px;
+  background-color: #ff6262;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+.add-icon {
+  margin-top: 7px;
+  width: 19.7px;
+  height: 19.7px;
+}
+
+.add-btn:active {
+  opacity: 0.6;
+}

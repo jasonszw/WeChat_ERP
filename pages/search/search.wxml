@@ -1,0 +1,10 @@
+<import src="../tpls/dialog/dialog.wxml"></import>
+<view class="searchBg">
+  <image src="../../images/icon/search-1.png"></image>
+  <input bindinput="bindSearchInput"   placeholder="{{searchType?'订单号/机构名称':'机构名称'}}" />
+  <view class="search color-fff" bindtap="doSearch" data-user-input="{{userInput}}" data-name="{{name}}" data-code="{{code}}" data-customer="{{customer}}">查询</view>
+</view>
+<!--匹配结果列表显示  -->
+<view wx:for="{{resList}}" wx:if="{{showed}}">
+  <view class="search-list" data-name="{{item.FName}}" data-code="{{item.FCode}}" bindtap="returnRes">{{item.FName}}</view>
+</view>

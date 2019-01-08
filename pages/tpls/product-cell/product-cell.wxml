@@ -1,0 +1,28 @@
+<template name="product-cell">
+  <view class="commodityList bg-fff">
+      <view class="commodityNum">
+        <text>{{item.FItemCode.FName}}({{item.FItemCode.FCode}})</text>
+        <view bindtap="toggleStatus" data-index="{{index}}" data-status="{{item.status}}">
+          <image  wx:if="{{item.status}}" src="../../images/icon/select.png" ></image>
+          <image  wx:else src="../../images/icon/unselect.png" ></image>
+        </view>
+      </view>
+      <view class="commodityInfo">
+        <view class="commodityCol">
+          <view>{{item.FItemCode.FSpec}}</view>
+          <text style="text-align:center">规格</text>
+        </view>
+
+        <view class="commodityCol">
+          <view>{{item.FItemCode.FNum}}</view>
+          <text>数量（{{item.FItemCode.FUnit}}）</text>
+        </view>
+
+        <view class="commodityCol">
+          <view>¥ {{item.FPrice}}</view>
+          <text>单价</text>
+        </view>
+
+      </view>
+    </view>
+</template>

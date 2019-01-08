@@ -1,0 +1,21 @@
+<!--login.wxml-->
+<view class="login bg-f0f2f5">
+  <view class="loginBg bg-629aff">
+    <image src="../../images/icon/logo.png"></image>
+  </view>
+  <view style="{{isInput ? 'bottom: 40vh;' : ''}}" class="login-container">
+    <form bindsubmit="bindLoginSubmit">
+      <view bindtap="bindInputTap">
+        <view class="user-pwd">
+          <image src="../../images/icon/username.png"></image>
+          <input placeholder="请输入用户名"  placeholder-class="input-placeholder" name="username" id="username" />
+        </view>
+        <view class="user-pwd">
+          <image src="../../images/icon/pwd.png"></image>
+          <input password="{{true}}"  placeholder-class="input-placeholder" placeholder="请输入密码" name="password" id="pwd" />
+        </view>
+      </view>
+      <view><button style="{{isInput? 'margin-top: 10%;' : ''}}" class="bg-629aff btn-lg" form-type="submit">登录</button></view>
+    </form>
+  </view>
+</view>

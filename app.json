@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/add-order/add-order",
+    "pages/order-list/order-list",
+    "pages/add-product/add-product",
+    "pages/examine/examine",
+    "pages/modify-order/modify-order",
+    "pages/search/search",
+    "pages/product-detail/product-detail",
+    "pages/order-detail/order-detail"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#629aff",
+    "navigationBarTitleText": "非凡通",
+    "navigationBarTextStyle": "white"
+  }
+}

@@ -1,0 +1,33 @@
+<!--订单列表  -->
+<template name='order-cell'> 
+<view class="card order-list">
+  <!--状态图标部分 0代表未发货状态,1代表已发货状态,2代表作废状态 -->
+  <view class="list-hd">
+    <image wx:if="{{item.FOutFlag === '作废' }}" src="../../images/icon/obsolete.png"  class="icon"></image>
+    <image wx:if="{{item.FOutFlag === '未出库'}}" src="../../images/icon/waiting-send.png"  class="icon"></image>
+    <image wx:if="{{item.FOutFlag === '已出库'}}" src="../../images/icon/had-send.png" class="icon"></image>
+  </view>
+  <view class="list-bd fs-32rpx" style="color:{{item.status ==2 ?'#87898d':'#454545'}}">
+  <!--组织名称  -->
+    <view class="list-hd-item fs-32rpx">
+      <text>{{item.FName}}</text>
+    </view>
+    <!--订单号  -->
+    <view class="list-hd-item color-87898d">
+      订单号:{{item.KeyId}}
+    </view>
+  </view>
+</view>
+<view class="ft-center">
+  <block wx:if="{{item.FOutFlag === '作废'}}">
+    <navigator class="btn-default bg-ff6262 " url="../../pages/order-detail/order-detail?KeyId={{item.KeyId}}&FName={{item.FName}}&FOutFlag={{item.FOutFlag}}" >已作废</navigator>
+  </block>
+   <block wx:if="{{item.FOutFlag === '未出库'}}">
+    <navigator class="btn-default bg-fdd600"  url="../../pages/order-detail/order-detail?KeyId={{item.KeyId}}&FName={{item.FName}}&FOutFlag={{item.FOutFlag}}">待发货</navigator>
+  </block>
+   <block wx:if="{{item.FOutFlag === '已出库'}}">
+    <navigator class="btn-default bg-629aff "  url="../../pages/order-detail/order-detail?KeyId={{item.KeyId}}&FName={{item.FName}}&FOutFlag={{item.FOutFlag}}">已发货</navigator>
+  </block>
+</view>
+<view class="line-spacing-20px"></view>
+ </template>

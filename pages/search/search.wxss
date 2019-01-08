@@ -1,0 +1,40 @@
+/* pages/search/search.wxss */
+@import '../tpls/dialog/dialog.wxss';
+
+page {
+  background: #fff;
+}
+.searchBg {
+  background: #629aff;
+  display: flex;
+  padding: 12px 0;
+  justify-content: space-around;
+  align-items: center;
+}
+.searchBg image {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 55rpx;
+}
+.searchBg input {
+  background-color: #fff;
+  border-radius: 34rpx;
+  font-size: 14px;
+  padding: 12rpx 0 12rpx 80rpx;
+  width: 65%;
+}
+.cancel {
+  color: #fff;
+  font-size: 18px;
+}
+.search-list {
+  padding: 15px 0 10px 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+.color-b1b1b1 {
+  color: #b1b1b1;
+}
+.search {
+  font-size: 18px;
+}

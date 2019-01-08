@@ -1,0 +1,140 @@
+/* order-detail.wxss */
+page {
+  background-color: #f0f2f5;
+}
+.bg-height {
+  width: 100%;
+  height: 150px;
+}
+.box {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  margin-top: -150px;
+  border-radius: 10px;
+}
+.order-info {
+  font-size: 14px;
+  color: #87898d;
+  width: 90%;
+  margin-left: 5%;
+  padding: 13px 0;
+  border-bottom: 1px solid #eeeeee;
+  overflow: hidden;
+}
+.order-info label {
+  float: left;
+}
+.order-info label:nth-of-type(1) {
+  width: 25%;
+}
+.order-info label:nth-of-type(2) {
+  width: 70%;
+  margin-left: 5%;
+  color: #454545;
+}
+.state-title {
+  width: 90%;
+  margin-left: 5%;
+  overflow: hidden;
+}
+.border-line {
+  border-bottom: 5px solid #eeeeee;
+}
+.state-title image {
+  float: left;
+  font-size: 14px;
+  margin-left: 10%;
+  margin-top: 8%;
+}
+.state-info {
+  float: left;
+  font-size: 14px;
+  padding-bottom: 13px;
+  margin-left: 15%;
+}
+.order-state {
+  padding: 13px 0;
+}
+.add-order-show {
+  border-top: 5px solid #eeeeee;
+  padding: 10px 0;
+  margin-top: -1px; 
+}
+.add-order {
+  width: 33.3%;
+}
+.add-order-list {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  font-size: 14px;
+  padding: 14px 0;
+  align-items: center;
+  background: #e9f2ff;
+  margin-bottom: 5px; 
+}
+.add-order-name {
+  margin-left: 2%;
+}
+.add-order-num {
+  text-align: center;
+}
+.order-num {
+  border-bottom: 1px solid #cfcfcf;
+  width: 35px;
+  transform: rotate(-45deg);
+  margin-left: 20px;
+}
+.order-num label {
+  display: inline-block;
+  transform: rotate(45deg);
+}
+.slash {
+  display: inline-block;
+  width: 1px;
+  height: 35px;
+  background: #cfcfcf;
+  transform: rotate(45deg) translate(-10px);
+}
+.add-order-price {
+  color: #ff2420;
+  text-align: center;
+}
+.order-name {
+  color: #454545;
+  padding-bottom:5px;
+}
+.order-spec {
+  color: #a2a2a2;
+}
+.remarks {
+  font-size: 12px;
+  color: #686a6d;
+  background-color: #e9f2ff;
+  width: 85%;
+  margin-left: 5%;
+  margin-top: -3px;
+  padding: 4px 0 4px 5%;
+}
+.box-bottom {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+.void-modify {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.void-modify view {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  width: 50%;
+  border-radius: 0;
+}

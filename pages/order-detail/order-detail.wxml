@@ -1,0 +1,48 @@
+<!--order-detail.wxml-->
+  <view>
+  <view class="bg-height bg-629aff"></view>
+  <view class="container">
+    <view class="box">
+
+      <view class="border-line">
+        <view class="state-title">
+          <view>
+            <image wx:if="{{ FStatus === '作废' }}" src="../../images/icon/obsolete.png" style="width:33px; height:33px" ></image> 
+            <image wx:if="{{ FStatus === '未出库' }}" src="../../images/icon/waiting-send.png" style="width:33px; height:33px" ></image>
+            <image wx:if="{{ FStatus === '已出库' }}" src="../../images/icon/had-send.png" style="width:33px; height:33px" ></image>
+          </view>
+          <view class="state-info">
+            <view class="order-state">订单状态：
+              <label  wx:if="{{ FStatus === '作废' }}">已作废</label>
+              <label  wx:if="{{ FStatus === '未出库' }}">未出库</label>
+              <label  wx:if="{{ FStatus === '已出库' }}">已出库</label>
+            </view>
+            <view class="send-date">创建日期：<label>{{detailInfo.order.FDate}}</label></view>
+          </view>
+        </view>
+      </view>
+
+      <view class="order-info"><label>机构名称</label> <label>{{detailInfo.order.FName}}</label></view>
+      <view class="order-info"><label>机构代码</label> <label>{{detailInfo.order.FCode}}</label></view>
+      <view wx:if="{{linkMan}}" class="order-info"><label>联系人</label> <label>{{detailInfo.order.FLinkman}}</label></view>
+      <view  wx:if="{{phone}}" class="order-info"><label>联系电话</label> <label>{{detailInfo.order.FPhone}}</label></view> 
+      <view  wx:if="{{orgName}}" class="order-info"><label>所属部门</label> <label>{{detailInfo.order.FOrgName}}</label></view>
+      <view  wx:if="{{address}}" class="order-info"><label>收货地址</label><label>{{detailInfo.order.FAddress}}</label></view>
+      
+    </view>
+
+    <view class="box-bottom">
+        <view class="order-info"><label>订单号</label> <label>{{detailInfo.order.KeyId}}</label></view>
+        <view class="order-info"><label>业务员</label> <label>{{detailInfo.order.FSalesman}}</label></view>
+        <view class="order-info"><label>作业区</label> <label>{{detailInfo.order.FDistributionPoint}}</label></view>
+        <view class="order-info"><label>配送方式</label> <label>{{detailInfo.order.FDeliveryMethod}}</label></view>
+        <view class="order-info"><label>计划类型</label> <label>{{detailInfo.order.FBill}}</label></view>
+        <view class="order-info"><label>备注</label><label>{{detailInfo.order.FMemo}}</label></view>
+      </view>
+  </view>
+
+  <view wx:if="{{ FStatus === '未出库' }}" class="void-modify" hidden="{{voidModify}}">
+    <view bindtap="bindCancelTap" class="color-454545 bg-fff">作废</view>
+    <view bindtap="bindModifyTap" class="bg-629aff color-fff">修改</view>
+  </view>
+</view>  

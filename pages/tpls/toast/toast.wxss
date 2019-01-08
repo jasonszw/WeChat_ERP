@@ -1,0 +1,15 @@
+/* toast.wxss */
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  padding: 15rpx;
+  text-align: center;
+}

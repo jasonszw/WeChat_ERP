@@ -1,0 +1,263 @@
+page {
+  font-family: -apple-system-font, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  background: #f0f2f5;
+}
+
+/*搜索框按钮*/
+
+.btn-search {
+  position: relative;
+}
+
+.btn-search image {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  margin-top: 10px;
+  margin-left: 16px;
+  z-index: 1;
+}
+
+.search-input {
+  position: absolute;
+  background-color: #fff;
+  opacity: 0.26;
+  padding-left: 40px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 17px;
+  float: left;
+  font-size: 14px;
+  width: 60.3%;
+}
+
+/*增加按钮*/
+
+.addOrder {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background-color: #629aff;
+  box-shadow: 0 3px 5px 0 rgba(98, 154, 255, 0.68);
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  border-radius: 5px;
+  background: white;
+}
+
+.line-row {
+  width: 10rpx;
+  height: 60rpx;
+  left: 43rpx;
+  top: 18rpx;
+}
+
+.line-col {
+  width: 60rpx;
+  height: 10rpx;
+  left: 18rpx;
+  top: 43rpx;
+}
+
+/*布局  */
+
+.container {
+  padding: 2% 2.7%;
+}
+
+.card {
+  border-radius: 20rpx;
+  background-color: #fff;
+  box-shadow: 0 4rpx 4rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-default {
+  width: 58px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 100px;
+  font-size: 28rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.btn-lg {
+  width: 214px;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 21.5px;
+  box-shadow: 0 3px 5px 0 rgba(98, 154, 255, 0.47);
+}
+
+/*按钮按下效果  */
+
+.btn-default:active, .btn-lg:active {
+  opacity: 0.6;
+}
+
+/*背景颜色部分  */
+
+/*橙色  */
+
+.bg-fdd600 {
+  background-color: #fdd600;
+}
+
+/*蓝色  */
+
+.bg-629aff {
+  background-color: #629aff;
+}
+
+/*红色  */
+
+.bg-ff6262 {
+  background-color: #ff6262;
+}
+
+/*灰色  */
+
+.bg-c0c0c0 {
+  background-color: #c0c0c0;
+}
+
+/*灰色*/
+
+.bg-f0f2f5 {
+  background-color: #f0f2f5;
+}
+
+/*白色*/
+
+.bg-fff {
+  background-color: #fff;
+}
+
+/*字体大小部分  */
+
+.fs-28rpx {
+  font-size: 28rpx;
+}
+fs-31rpx{
+   font-size: 31rpx;
+}
+
+.fs-32rpx {
+  font-size: 16px;
+}
+
+/*字体颜色  */
+
+/*灰色字体  */
+
+.color-87898d {
+  color: #87898d;
+}
+
+/* 正常色字体 */
+
+.color-454545 {
+  color: #454545;
+}
+
+/*蓝色字体  */
+
+.color-629aff {
+  color: #629aff;
+}
+
+/*白色字体*/
+
+.color-fff {
+  color: #fff;
+}
+
+/*黄色字体  */
+
+.color-fdd600 {
+  color: #fdd600;
+}
+
+/*红色字体  */
+
+.color-ff6262 {
+  color: #ff6262;
+}
+
+/*列表之间行间距  */
+
+.line-spacing-20px {
+  margin-bottom: 20px;
+}
+
+/*图标大小  */
+
+.icon {
+  width: 35px;
+  height: 35px;
+}
+
+/*白色搜索图标  */
+
+.search-icon {
+  width: 15px;
+  height: 15px;
+  color: #fff;
+}
+
+/*下拉列表下三角  */
+
+.icon-down {
+  padding-top: 7px;
+  width: 0;
+  height: 0;
+  border-bottom: 6px solid transparent;
+  border-top: 6px solid #fff;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+/*下拉列表上三角  */
+
+.icon-up {
+  padding-top: 7px;
+  width: 0;
+  height: 0;
+  border-bottom: 6px solid #fff;
+  border-top: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  margin-right: 10px;
+  margin-top: -8px;
+}
+
+/*向右图标  */
+
+.arrow {
+  padding-right: 4.6%;
+  position: relative;
+}
+
+.arrow:after {
+  content: '';
+  display: inline-block;
+  width: 18rpx;
+  height: 18rpx;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  margin-top: -10rpx;
+  border-width: 4rpx 4rpx 0 0;
+  border-style: solid;
+  border-color: #d2d2d2;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}

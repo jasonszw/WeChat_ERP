@@ -1,0 +1,36 @@
+<!--add-product.wxml-->
+<view class="bg-150"></view>
+<view class="container" style="margin-top:-150px;">
+  <view class="card" style="height:90vh;">
+    <view class="list">
+      <view class="list-item">
+        <view class="list-item-title">商品代码</view>
+        <view class="list-item-desc">G1504</view>
+      </view>
+      <view class="list-item">
+        <view class="list-item-title">商品名称</view>
+        <view class="list-item-desc">G1504</view>
+      </view>
+      <view class="list-item">
+        <view class="list-item-title">助记码</view>
+        <view class="list-item-desc">G1504</view>
+      </view>
+      <view class="list-item">
+        <view class="list-item-title">规格</view>
+        <view class="list-item-desc">G1504</view>
+      </view>
+      <view class="list-item">
+        <view class="list-item-title">单位</view>
+        <view class="list-item-desc">G1504</view>
+      </view>
+      <view class="list-item">
+        <view class="list-item-title">是否可用</view>
+        <view class="list-item-desc">G1504</view>
+      </view>
+    </view>
+    <!--添加按钮  -->
+    <view class="btn-area">
+      <view class="btn-lg bg-629aff" bindtap="addProduct">添加</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--下拉列表模板  -->
+<template name="bottom-dialog"> 
+<!--使用模板所需传递参数 showedRadioGroup 代表 是否显示   -->
+<view class="mask" wx:if="{{showedRadioGroup}}">
+</view>
+<scroll-view class="radio-group" scroll-y="true" style="height:{{optionsList.length>3?150:optionsList.length*50}}px" wx:if="{{showedRadioGroup}}">
+  <!--下拉列表数据  optionsList 绑定的列表集合-->
+  <view class="radio" wx:for="{{optionsList}}" wx:index="index" data-index="{{index}}" bindtap="getSelectdItem" data-item="{{item}}" data-type="{{selectType}}" >
+    <text>{{item}}</text>
+  </view>
+</scroll-view>
+</template>

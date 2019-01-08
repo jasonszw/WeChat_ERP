@@ -1,0 +1,20 @@
+<template name="order-product">
+<!--添加产品样式  -->
+<view class="list-2">
+  <view class="list2-title">
+     {{item.FItemCode.FName}}
+  </view>
+  <view class="list2-content">
+    <view class="list2-item">{{item.FItemCode.FSpec}}</view>
+    <view class="list2-item"> 
+       <input type="number" name="num_{{index}}" class="num-input color-629aff" bindinput="getNum" value="{{item.FItemCode.FNum}}" data-index="{{index}}"/>
+       <view >{{item.FItemCode.FUnit}}</view>
+     </view>
+    <view class="list2-item" style="flex:2;margin-left:15px;"> 
+    <input type="digit" name="price_{{index}}" class="amount-input color-629aff" bindinput="getPrice" value="{{item.FPrice}}" data-index="{{index}}"/>¥</view>
+  </view>
+  <view class="list2-foot">
+     备注：<input type="text" placeholder="选填" class="remarks-input"   />
+  </view>
+</view>
+</template>
